@@ -1,0 +1,51 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="customer.project251.controller.View1" displayBlock="true">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Table noDataText="Drop column list items here and columns in the area above" id="table0" items="{path: '/Products'}">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <content>
+                            <Title text="{i18n>Products}" level="H2"/>
+                            <ToolbarSpacer />
+                            <Button text="{i18n>createNewProduct}" id="button0" press="onPressCreateProduct"/>
+                        </content>
+                    </OverflowToolbar>
+                    
+                </headerToolbar>
+
+                <items>
+                    <ColumnListItem type="Active" id="item0">
+                        <cells>
+                            <Text text="{ProductID}" id="text2"/>
+                            <Text text="{ProductName}" id="text3"/>
+                            <Text text="{QuantityPerUnit}" id="text4"/>
+                            <Text text="{UnitPrice}" id="text5"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+                <columns>
+                    <Column id="column0">
+                        <header>
+                            <Label text="{i18n>ProductID}" id="label0"/>
+                        </header>
+                    </Column>
+                    <Column id="column1">
+                        <header>
+                            <Label text="{i18n>ProductName}" id="label1"/>
+                        </header>
+                    </Column>
+                    <Column id="column2">
+                        <header>
+                            <Label text="{i18n>QuantityPerUnit}" id="label2"/>
+                        </header>
+                    </Column>
+                    <Column id="column3">
+                        <header>
+                            <Label text="{i18n>UnitPrice}" id="label3"/>
+                        </header>
+                    </Column>
+                </columns>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
