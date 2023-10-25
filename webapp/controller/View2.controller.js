@@ -42,7 +42,7 @@ sap.ui.define([
                 */
 
                 const oData = this.getView().getModel("NewProduct").getData();
-                if (oData.ProductID.length !== 0) {
+                if (!this.isEmptyOrWhiteSpace(oData.ProductID)) {
                     oData.ProductID = parseInt(oData.ProductID);
                     const oResult = await this.postMyOdata("Products", oData);
                     if (oResult) {
