@@ -22,7 +22,7 @@ sap.ui.define([
                 this.getView().byId("inputQuantityPerUnit").setValue("");
                 this.getView().byId("inputUnitPrice").setValue("");
                 */
-               //con modello
+                //con modello
                 var oNewProduct = {
                     ProductID: "",
                     ProductName: "",
@@ -47,8 +47,15 @@ sap.ui.define([
                     const oResult = await this.postMyOdata("Products", oData);
                     if (oResult) {
                         //prodotto aggiunto
-                        MessageBox.success("Product: " + oResult.ProductID + " ('" + oResult.ProductName + "') created.");
-                        this.onNavBack("RouteView1");
+                        MessageBox.success(
+                            "Product: " + oResult.ProductID + " ('" + oResult.ProductName + "') created.", {
+                            actions: [MessageBox.Action.OK],
+                            emphasizedAction: MessageBox.Action.OK,
+                            onClose: function (oAction) {
+                                this.onNavBack("RouteView1");
+                            }.bind(this)
+                        }
+                        );
                     }
                 } else {
                     MessageBox.error("Insert 'ProductID'");
